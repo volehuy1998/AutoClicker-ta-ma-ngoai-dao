@@ -75,7 +75,7 @@ BOOL CAutoClickerDlg::OnInitDialog()
 	// TODO: Add extra initialization here
 	//hGlobalHook = SetWindowsHookEx(WH_KEYBOARD_LL, HookProc, GetModuleHandle(NULL), 0);
 	mainTimerId = SetTimer(1, 1000, NULL);
-	SetTimer(2, 50, NULL);
+	//SetTimer(2, 50, NULL);
 
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -163,18 +163,12 @@ void CAutoClickerDlg::OnTimer(UINT_PTR nIDEvent)
 
 	if (nIDEvent == mainTimerId)
 	{
-		//1600 333
 		if (flagNeedClick)
 		{
 			SendLeftMouseClick(1600, 333);
-			//SendLeftMouseClick(200, 200);
-
 		}
-		infoStr.AppendFormat(L"Send click\r\n", point.x, point.y);
 	}
-	else
-	{
-	}
+
 
 
 	
