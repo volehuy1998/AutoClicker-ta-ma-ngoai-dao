@@ -118,7 +118,6 @@ HCURSOR CAutoClickerDlg::OnQueryDragIcon()
 }
 
 
-
 HWND		GetBlueStackWindows(void)
 {
 	HWND d3Wnd = FindWindowW(L"BlueStacksApp", L"_ctl.Window");
@@ -157,10 +156,9 @@ void CAutoClickerDlg::OnTimer(UINT_PTR nIDEvent)
 	POINT point = { 0 };
 	GetCursorPos(&point);
 	infoStr.AppendFormat(L"Mouse: %d %d\r\n", point.x, point.y);
-	HWND blWnd = GetBlueStackWindows();
-	blWnd = ::FindWindowEx(blWnd, NULL, NULL, NULL);
-
-	infoStr.AppendFormat(L"blWnd: %d\r\n",(int) blWnd);
+	//	HWND blWnd = GetBlueStackWindows();
+	//	blWnd = ::FindWindowEx(blWnd, NULL, NULL, NULL);
+	//	infoStr.AppendFormat(L"blWnd: %d\r\n",(int) blWnd);
 
 
 	if (nIDEvent == mainTimerId)
